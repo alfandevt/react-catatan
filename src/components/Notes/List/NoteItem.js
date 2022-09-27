@@ -11,6 +11,7 @@ const NoteItem = ({
   createdAt,
   body,
   itemButtonLabel,
+  dateLangId,
 }) => {
   const isBodyFaded = (bodyLength) => {
     return bodyLength > 70 ? "faded" : "";
@@ -18,7 +19,9 @@ const NoteItem = ({
   return (
     <article className="note-item">
       <h3 className="note-item__title elipsis">{title}</h3>
-      <p className="note-item__created-at">{showFormattedDate(createdAt)}</p>
+      <p className="note-item__created-at">
+        {showFormattedDate(createdAt, dateLangId)}
+      </p>
       <p className={`note-item__body ${isBodyFaded(body.length)}`}>
         {parse(body)}
       </p>
@@ -35,6 +38,7 @@ NoteItem.propTypes = {
   createdAt: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   itemButtonLabel: PropTypes.string.isRequired,
+  dateLangId: PropTypes.string.isRequired,
 };
 
 export default NoteItem;

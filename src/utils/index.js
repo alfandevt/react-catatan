@@ -1,11 +1,11 @@
-export const showFormattedDate = (date) => {
+export const showFormattedDate = (date, langId = "id-ID") => {
   const options = {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
   };
-  return new Date(date).toLocaleDateString("id-ID", options);
+  return new Date(date).toLocaleDateString(langId, options);
 };
 
 export const generateId = () => {

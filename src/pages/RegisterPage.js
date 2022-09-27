@@ -59,6 +59,7 @@ const RegisterPage = () => {
       swalAlert(message, { icon: "warning" });
     }
   };
+  
   return (
     <section className="note-page login-page">
       <h2 className="note-page__heading">{lang.registerPage.sectionHeading}</h2>

@@ -22,6 +22,10 @@
   color: #57340c;
 }
 
+.note-app.light .note-list__no-item {
+  color: #57340c;
+}
+
 .note-app.light .note-detail__title {
   color: #57340c;
 }

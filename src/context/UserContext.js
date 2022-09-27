@@ -60,7 +60,6 @@ export const UserContextProvider = ({ children }) => {
     removeAccessToken();
     removeUserData();
     navigate("/login");
-    swalAlert(alerts.authAction.logoutLabel, { icon: "success" });
   };
 
   const context = {

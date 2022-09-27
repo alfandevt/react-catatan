@@ -16,6 +16,7 @@ const DetailNotePage = () => {
 
   useEffect(() => {
     fetchData(noteId);
+    // eslint-disable-next-line
   }, []);
 
   if (loading) {
@@ -29,7 +30,7 @@ const DetailNotePage = () => {
           ? lang.archiveNotePage.sectionHeading
           : lang.activeNotePage.sectionHeading}
       </h2>
-      <NoteDetail {...note} />
+      <NoteDetail dateLangId={lang.id} {...note} />
       <NoteDetailActions
         {...note}
         onArchive={archiveNoteHandler}

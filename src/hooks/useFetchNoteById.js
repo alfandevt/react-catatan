@@ -2,10 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getNote } from "../utils/network-data";
 import { swalAlert } from "../utils/sweetAlert";
+import useLanguageContext from "./useLanguageContext";
 import useUserContext from "./useUserContext";
 
 const useFetchNoteById = () => {
   const navigate = useNavigate();
+  const {
+    lang: { alerts },
+  } = useLanguageContext();
   const { logoutHandler } = useUserContext();
   const [note, setNote] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -15,9 +19,10 @@ const useFetchNoteById = () => {
     if (!error) {
       setNote(data);
     } else if (error && code === 403) {
-      swalAlert("Tidak dapat mengakses catatan!", { icon: "error" });
+      swalAlert(alerts.authAction.forbiddenNote, { icon: "error" });
       navigate("/");
     } else if (error && code === 401) {
+      swalAlert(alerts.authAction.userSession, { icon: "info" });
       logoutHandler();
     }
     setLoading(false);

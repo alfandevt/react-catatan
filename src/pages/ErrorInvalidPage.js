@@ -8,6 +8,7 @@ const ErrorInvalidPage = () => {
   const {
     lang: { errorPage },
   } = useLanguageContext();
+
   return (
     <section className="note-page error-invalid-page">
       <h2 className="note-page__heading">{errorPage.sectionHeading}</h2>

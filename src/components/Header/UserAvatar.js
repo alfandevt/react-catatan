@@ -8,6 +8,7 @@ import {
   BiLogOut,
   BiUserCircle,
 } from "react-icons/bi";
+import { swalAlert } from "../../utils/sweetAlert";
 
 const UserAvatar = ({ user, lang, onLogout, onSwitchLang, onSwitchTheme }) => {
   const [toggle, setToggle] = useState(false);
@@ -20,6 +21,7 @@ const UserAvatar = ({ user, lang, onLogout, onSwitchLang, onSwitchTheme }) => {
       }
       setToggle(false);
     };
+
     document.body.addEventListener("click", onBodyClick, { capture: true });
 
     return () => {
@@ -30,6 +32,7 @@ const UserAvatar = ({ user, lang, onLogout, onSwitchLang, onSwitchTheme }) => {
   }, []);
 
   const onLogoutHandler = () => {
+    swalAlert(lang.alerts.authAction.logoutLabel, { icon: "success" });
     setToggle(false);
     onLogout();
   };
@@ -84,7 +87,7 @@ const UserAvatar = ({ user, lang, onLogout, onSwitchLang, onSwitchTheme }) => {
 };
 
 UserAvatar.propTypes = {
-  user: PropTypes.object.isRequired,
+  user: PropTypes.object,
   lang: PropTypes.object.isRequired,
   onLogout: PropTypes.func.isRequired,
   onSwitchLang: PropTypes.func.isRequired,

@@ -9,6 +9,7 @@ const AddNotePage = () => {
 
   useEffect(() => {
     getMe();
+    // eslint-disable-next-line
   }, []);
 
   return (

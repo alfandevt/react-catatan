@@ -3,15 +3,20 @@ import React from "react";
 import NoteItem from "./NoteItem";
 import PropTypes from "prop-types";
 
-const NoteList = ({ notes, itemButtonLabel }) => {
+const NoteList = ({ notes, itemButtonLabel, dateLangId, emptyDataLabel }) => {
   const renderedNotes = notes.map((note) => {
     return (
-      <NoteItem itemButtonLabel={itemButtonLabel} key={note.id} {...note} />
+      <NoteItem
+        dateLangId={dateLangId}
+        itemButtonLabel={itemButtonLabel}
+        key={note.id}
+        {...note}
+      />
     );
   });
 
   const noItemText = (
-    <span className="note-list__no-item">Tidak ada catatan</span>
+    <span className="note-list__no-item">{emptyDataLabel}</span>
   );
 
   return (
@@ -32,6 +37,8 @@ NoteList.propTypes = {
     })
   ).isRequired,
   itemButtonLabel: PropTypes.string.isRequired,
+  dateLangId: PropTypes.string.isRequired,
+  emptyDataLabel: PropTypes.string.isRequired,
 };
 
 export default NoteList;

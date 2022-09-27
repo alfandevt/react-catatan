@@ -8,9 +8,7 @@ import Spinner from "../components/Spinner/Spinner";
 import useLanguageContext from "../hooks/useLanguageContext";
 
 const ActiveNotePage = () => {
-  const {
-    lang: { activeNotePage },
-  } = useLanguageContext();
+  const { lang } = useLanguageContext();
   const [searchParams] = useSearchParams();
   const [debouncedParams, setDebouncedParams] = useState(null);
   const { filteredNotes, search, loading, setLoading } = useFetchActiveNotes();
@@ -26,19 +24,25 @@ const ActiveNotePage = () => {
     return () => {
       clearTimeout(timerId);
     };
+    // eslint-disable-next-line
   }, [searchParams]);
 
   useEffect(() => {
     search(debouncedParams);
+    // eslint-disable-next-line
   }, [debouncedParams]);
 
   return (
     <section className="note-page active-note-page">
       {loading && <Spinner />}
-      <h2 className="note-page__heading">{activeNotePage.sectionHeading}</h2>
-      <SearchBox placeholder={activeNotePage.inputPlaceholder} />
+      <h2 className="note-page__heading">
+        {lang.activeNotePage.sectionHeading}
+      </h2>
+      <SearchBox placeholder={lang.activeNotePage.inputPlaceholder} />
       <NoteList
-        itemButtonLabel={activeNotePage.itemButtonLabel}
+        itemButtonLabel={lang.activeNotePage.itemButtonLabel}
+        emptyDataLabel={lang.activeNotePage.emptyDataLabel}
+        dateLangId={lang.id}
         notes={filteredNotes}
       />
       <Link to="/catatan/baru" className="note-page__add-btn">

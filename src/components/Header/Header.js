@@ -2,8 +2,8 @@ import "../../styles/Header/Header.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
-import useUserContext from "../../hooks/useUserContext";
 import UserAvatar from "./UserAvatar";
+import useUserContext from "../../hooks/useUserContext";
 import useLanguageContext from "../../hooks/useLanguageContext";
 import useThemeContext from "../../hooks/useThemeContext";
 
@@ -11,6 +11,7 @@ const Header = () => {
   const { user, logoutHandler } = useUserContext();
   const { onSwitchTheme } = useThemeContext();
   const { lang, onSwitchLang } = useLanguageContext();
+
   return (
     <header className="note-app__header">
       <div className="note-app__header-group">

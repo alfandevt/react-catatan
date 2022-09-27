@@ -34,11 +34,13 @@ const LANGUAGES = [
       sectionHeading: "Catatan",
       inputPlaceholder: "Cari catatan...",
       itemButtonLabel: "Buka catatan",
+      emptyDataLabel: "Tidak ada catatan",
     },
     archiveNotePage: {
       sectionHeading: "Arsip",
       inputPlaceholder: "Cari arsip...",
       itemButtonLabel: "Buka arsip",
+      emptyDataLabel: "Tidak ada arsip",
     },
     addNotePage: {
       sectionHeading: "Buat Catatan",
@@ -120,11 +122,13 @@ const LANGUAGES = [
       sectionHeading: "Notes",
       inputPlaceholder: "Find notes...",
       itemButtonLabel: "Open note",
+      emptyDataLabel: "Empty notes",
     },
     archiveNotePage: {
       sectionHeading: "Archives",
       inputPlaceholder: "Find archives...",
       itemButtonLabel: "Open archive",
+      emptyDataLabel: "Empty archives ",
     },
     addNotePage: {
       sectionHeading: "Create Note",

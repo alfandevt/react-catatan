@@ -1,21 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import { createNote } from "../utils/network-data";
 import { swalAlert } from "../utils/sweetAlert";
+import useLanguageContext from "./useLanguageContext";
 import useUserContext from "./useUserContext";
 
 const useCreateNote = () => {
+  const {
+    lang: { alerts },
+  } = useLanguageContext();
   const { logoutHandler } = useUserContext();
   const navigate = useNavigate();
 
   const createNoteHandler = async (title, body) => {
-    const { error, code, errorMessage } = await createNote(title, body);
+    const { error, code } = await createNote(title, body);
     if (!error) {
-      swalAlert("Berhasil menambah catatan!", { icon: "success" });
+      swalAlert(alerts.noteAction.addNoteSuccess, { icon: "success" });
       navigate("/catatan-aktif", { replace: true });
     } else if (error && code === 401) {
+      swalAlert(alerts.authAction.userSession, { icon: "info" });
       logoutHandler();
     } else {
-      swalAlert(errorMessage, { icon: "error" });
+      swalAlert(alerts.noteAction.addNoteFail, { icon: "error" });
     }
   };
 
