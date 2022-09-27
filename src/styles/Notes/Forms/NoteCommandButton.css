@@ -1,0 +1,12 @@
+.note-form__cmd-btn {
+  background-color: transparent;
+  padding: 1rem;
+  width: 8rem;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.note-form__cmd-btn:hover {
+  background-color: #cfcfcf;
+}

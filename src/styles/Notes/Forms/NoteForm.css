@@ -1,0 +1,94 @@
+.note-form {
+  max-width: 140rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  position: relative;
+}
+
+.note-form__overlay {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh);
+  z-index: 12;
+  opacity: 0.6;
+  background-color: #020202;
+  transform: scale(0);
+  transition: transform 0.1s ease-in-out;
+}
+
+.note-form__overlay.focus {
+  transform: scale(1);
+}
+
+.note-form__form-group {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 14;
+  transition: transform 0.2s ease-in-out;
+}
+
+.note-form__form-group.focus {
+  transform: scale(1.02);
+}
+
+.note-form__editable:empty::before {
+  content: attr(dataplaceholder);
+  pointer-events: none;
+  display: block; /* For Firefox */
+}
+
+.note-form__btn-save,
+.note-form__btn-cancel {
+  padding: 1rem;
+  width: 12rem;
+  outline: 0;
+  border: 0;
+  background-color: #bd6d0c;
+  color: #fefefe;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  float: right;
+  cursor: pointer;
+}
+
+.note-form__btn-save {
+  background-color: #06ae4c;
+}
+
+.note-form__btn-save:disabled {
+  background-color: #868686;
+  cursor: not-allowed;
+}
+
+.note-form__btn-cancel {
+  background-color: #9d1e0d;
+}
+
+.note-form__btn-cancel::after {
+  clear: both;
+}
+
+@media (max-width: 768px) {
+  .note-form {
+    padding: 2rem;
+  }
+  .note-form__form-group.focus {
+    transform: translateY(-10rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .note-form__btn-save:hover:not(:disabled),
+  .note-form__btn-cancel:hover {
+    border: 0.2rem solid #fefefe;
+  }
+}

@@ -1,0 +1,53 @@
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Common styles */
+* {
+  /* CSS Reset */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  font-weight: 400;
+}
+
+html {
+  /* Reset satuan 'rem' */
+  font-size: 62.5%;
+
+  scroll-behavior: smooth;
+}
+
+main {
+  min-height: calc(100vh - 12rem);
+}
+
+b,
+strong,
+.bold {
+  font-weight: bold;
+}
+
+i,
+em,
+.italic {
+  font-style: italic;
+}
+
+u,
+.underline {
+  text-decoration: underline;
+}
+
+.elipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.no-display {
+  display: none;
+}

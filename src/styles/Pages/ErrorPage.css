@@ -1,0 +1,36 @@
+.note-page.error-invalid-page {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    #cfa270,
+    #fefefe 20%,
+    #fff2ab 70%,
+    #eed3b4 95%
+  );
+}
+
+.note-page.error-invalid-page .note-page__heading {
+  background-color: transparent;
+  color: #2d3f4b;
+  padding: 8rem 0.5rem 2rem;
+}
+
+.note-page__error__link {
+  display: block;
+  width: 30rem;
+  font-weight: 500;
+  font-size: 2rem;
+  color: #2d3f4b;
+  text-decoration: underline;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.note-page__error__img {
+  display: block;
+  width: 90%;
+  max-height: 50rem;
+  margin: 0 auto;
+}

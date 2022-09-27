@@ -1,0 +1,22 @@
+.user-form__input-control:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.user-form__input-control > label,
+.user-form__input-control > input {
+  display: block;
+}
+
+.user-form__input-control > label {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.user-form__input-control > input {
+  font-size: 1.6rem;
+  padding: 0.5rem 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-bottom: 0.2rem solid #57340c;
+}

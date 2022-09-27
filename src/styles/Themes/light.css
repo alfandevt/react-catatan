@@ -1,0 +1,72 @@
+/* Page */
+.note-app.light .note-app__background {
+  background-color: #f6e9cf;
+}
+
+.note-app.light .note-app__header {
+  background-color: #bd6d0c;
+  color: #f6e9cf;
+}
+
+.note-app.light .note-app__brand {
+  color: #f6e9cf;
+}
+
+.note-app.light .note-page__heading {
+  background-color: #eac397;
+  color: #57340c;
+}
+
+.note-app.light .note-page__add-btn {
+  background-color: #eac397;
+  color: #57340c;
+}
+
+.note-app.light .note-detail__title {
+  color: #57340c;
+}
+
+.note-app.light .note-detail__date {
+  color: #bd6d0c;
+}
+
+.note-app.light .note-detail__body {
+  color: #57340c;
+}
+
+.note-app.light .note-form__counter {
+  color: #57340c;
+}
+
+.note-app.light .note-form__form-group.focus .note-form__counter {
+  color: #fefefe;
+}
+
+.note-app.light .note-form__input {
+  border-bottom-color: #f6e9cf;
+}
+
+.note-app.light button.item.theme {
+  background-color: #452c07;
+  color: #f0e4d6;
+}
+
+.note-app.light .note-page.error-invalid-page {
+  background: linear-gradient(
+    to top,
+    #eac397,
+    #fefefe 20%,
+    #fff2ab 70%,
+    #f6e9cf 95%
+  );
+}
+/* End of Page */
+
+@media (min-width: 800px) {
+  /* Page */
+  .note-page__add-btn:hover {
+    color: #eed3b4;
+    opacity: 1;
+  }
+  /* End of Page */
+}

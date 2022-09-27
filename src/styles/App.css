@@ -1,0 +1,10 @@
+.note-app__background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #7c4708;
+  z-index: -4;
+  transition: background-color 0.2s ease;
+}

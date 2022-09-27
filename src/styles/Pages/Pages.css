@@ -1,0 +1,60 @@
+.note-page {
+  min-height: inherit;
+  padding-bottom: 24rem;
+}
+
+.note-page__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+
+.note-page__heading {
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  margin-bottom: 3rem;
+  color: #cfa270;
+  text-align: center;
+  background-color: #57340c;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.note-page__add-btn {
+  display: block;
+  position: fixed;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: #eed3b4;
+  padding-top: 0.5rem;
+  font-size: 6rem;
+  height: 8rem;
+  width: 8rem;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  outline: 0;
+  border: 0;
+  color: #57340c;
+  opacity: 0.9;
+  z-index: 13;
+}
+
+@media (max-width: 768px) {
+  .note-page {
+    padding-bottom: 6rem;
+  }
+
+  .note-page__heading {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .note-page__add-btn:hover {
+    color: #e69a00;
+    opacity: 1;
+  }
+}

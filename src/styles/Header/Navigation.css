@@ -1,0 +1,22 @@
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  display: inline-block;
+  color: #f0e4d6;
+  font-size: 1.6rem;
+  padding: 1rem;
+  font-weight: 500;
+  width: 16rem;
+  height: 4.3rem;
+  text-align: center;
+  background-color: #775023;
+}
+
+.nav-link.active {
+  background-color: #fff2ab;
+  color: #775023;
+}

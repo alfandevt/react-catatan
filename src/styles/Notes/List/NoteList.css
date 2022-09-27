@@ -1,0 +1,28 @@
+.note-list {
+  width: 100%;
+  padding: 2rem 4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.note-list__no-item {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: .1rem;
+  color: #eed3b4;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+@media (max-width: 643px) {
+  .note-list {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (min-width: 1380px) {
+  .note-list {
+    max-width: 120rem;
+  }
+}

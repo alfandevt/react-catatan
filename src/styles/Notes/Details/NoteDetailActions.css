@@ -1,0 +1,43 @@
+.note-detail__action-group {
+  display: block;
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+}
+
+.note-detail__action-button {
+  font-size: 4rem;
+  width: 6rem;
+  height: 6rem;
+  padding-top: 0.5rem;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  border: 0;
+  outline: 0;
+  background-color: #eed3b4;
+  color: #57340c;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .note-detail__action-group {
+    right: 2rem;
+    bottom: 2rem;
+    opacity: 0.8;
+  }
+  .note-detail__action-button {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .note-detail__action-button:hover {
+    color: #e69a00;
+  }
+
+  .note-detail__action-button.remove:hover {
+    color: #d30202;
+  }
+}

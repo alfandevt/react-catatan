@@ -1,0 +1,9 @@
+.note-form__editable {
+  display: block;
+  width: 100%;
+  min-height: 30rem;
+  background-color: white;
+  overflow: hidden;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
