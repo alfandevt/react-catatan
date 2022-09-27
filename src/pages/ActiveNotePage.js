@@ -6,6 +6,7 @@ import SearchBox from "../components/Notes/SearchBox/SearchBox";
 import useFetchActiveNotes from "../hooks/useFetchActiveNotes";
 import Spinner from "../components/Spinner/Spinner";
 import useLanguageContext from "../hooks/useLanguageContext";
+import pathData from "../utils/path-data";
 
 const ActiveNotePage = () => {
   const { lang } = useLanguageContext();
@@ -45,7 +46,7 @@ const ActiveNotePage = () => {
         dateLangId={lang.id}
         notes={filteredNotes}
       />
-      <Link to="/catatan/baru" className="note-page__add-btn">
+      <Link to={pathData.CREATE_NOTE} className="note-page__add-btn">
         <MdNoteAdd />
       </Link>
     </section>

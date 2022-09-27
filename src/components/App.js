@@ -16,6 +16,7 @@ import RegisterPage from "../pages/RegisterPage";
 import AuthGuard from "../RouteGuards/AuthGuard";
 import useUserContext from "../hooks/useUserContext";
 import useThemeContext from "../hooks/useThemeContext";
+import pathData from "../utils/path-data";
 
 const App = () => {
   const { theme } = useThemeContext();
@@ -28,77 +29,80 @@ const App = () => {
       <main>
         <Routes>
           <Route
-            path="/"
+            path={pathData.BASE}
             element={
               <AuthGuard
                 isAllowed={user}
-                redirectPath="/login"
-                element={<Navigate to="catatan-aktif" />}
+                redirectPath={pathData.LOGIN}
+                element={<Navigate to={pathData.NOTES} />}
               />
             }
           />
           <Route
-            path="catatan-aktif"
+            path={pathData.NOTES}
             element={
               <AuthGuard
                 isAllowed={user}
-                redirectPath="/login"
+                redirectPath={pathData.LOGIN}
                 element={<ActiveNotePage />}
               />
             }
           />
           <Route
-            path="catatan-arsip"
+            path={pathData.ARCHIVES}
             element={
               <AuthGuard
                 isAllowed={user}
-                redirectPath="/login"
+                redirectPath={pathData.LOGIN}
                 element={<ArchivesPage />}
               />
             }
           />
           <Route
-            path="catatan/baru"
+            path={pathData.CREATE_NOTE}
             element={
               <AuthGuard
                 isAllowed={user}
-                redirectPath="/login"
+                redirectPath={pathData.LOGIN}
                 element={<AddNotePage />}
               />
             }
           />
           <Route
-            path="catatan/:noteId"
+            path={pathData.DETAIL_NOTE}
             element={
               <AuthGuard
                 isAllowed={user}
-                redirectPath="/login"
+                redirectPath={pathData.LOGIN}
                 element={<DetailNotePage />}
               />
             }
           />
           <Route
-            path="login"
+            path={pathData.LOGIN}
             element={
               <AuthGuard
                 isAllowed={!user}
-                redirectPath="/"
+                redirectPath={pathData.BASE}
                 element={<LoginPage />}
               />
             }
           />
           <Route
-            path="daftar"
+            path={pathData.REGISTER}
             element={
               <AuthGuard
                 isAllowed={!user}
-                redirectPath="/"
+                redirectPath={pathData.BASE}
                 element={<RegisterPage />}
               />
             }
           />
-          <Route path="*" element={<Navigate to="404" />} />
-          <Route path="404" element={<ErrorInvalidPage />} />
+          <Route
+            path={pathData.WILDCARD}
+            element={<Navigate to={pathData.NOT_FOUND} />}
+          />
+          <Route path={pathData.NOT_FOUND} element={<ErrorInvalidPage />} />
         </Routes>
       </main>
     </div>

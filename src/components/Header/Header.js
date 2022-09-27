@@ -6,6 +6,7 @@ import UserAvatar from "./UserAvatar";
 import useUserContext from "../../hooks/useUserContext";
 import useLanguageContext from "../../hooks/useLanguageContext";
 import useThemeContext from "../../hooks/useThemeContext";
+import pathData from "../../utils/path-data";
 
 const Header = () => {
   const { user, logoutHandler } = useUserContext();
@@ -15,7 +16,7 @@ const Header = () => {
   return (
     <header className="note-app__header">
       <div className="note-app__header-group">
-        <Link to="/" className="note-app__brand">
+        <Link to={pathData.BASE} className="note-app__brand">
           {lang.appTitle}
         </Link>
         <UserAvatar

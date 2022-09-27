@@ -22,9 +22,9 @@ const NoteItem = ({
       <p className="note-item__created-at">
         {showFormattedDate(createdAt, dateLangId)}
       </p>
-      <p className={`note-item__body ${isBodyFaded(body.length)}`}>
+      <div className={`note-item__body ${isBodyFaded(body.length)}`}>
         {parse(body)}
-      </p>
+      </div>
       <Link to={`/catatan/${id}`} className="note-item__action">
         <span>{itemButtonLabel}</span>
       </Link>

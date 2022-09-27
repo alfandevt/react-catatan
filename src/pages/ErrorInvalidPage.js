@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ErrorSvg from "../assets/svg/undraw_page_not_found_re_e9o6.svg";
 import useLanguageContext from "../hooks/useLanguageContext";
+import pathData from "../utils/path-data";
 
 const ErrorInvalidPage = () => {
   const {
@@ -18,7 +19,7 @@ const ErrorInvalidPage = () => {
           alt="Error Not Found"
           src={ErrorSvg}
         />
-        <Link to="/" className="note-page__error__link">
+        <Link to={pathData.BASE} className="note-page__error__link">
           {errorPage.actionLink}
         </Link>
       </div>

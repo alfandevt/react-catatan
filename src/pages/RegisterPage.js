@@ -5,6 +5,7 @@ import InputField from "../components/UserForms/InputField";
 import useInput from "../hooks/useInput";
 import useLanguageContext from "../hooks/useLanguageContext";
 import useUserContext from "../hooks/useUserContext";
+import pathData from "../utils/path-data";
 
 const RegisterPage = () => {
   const { lang } = useLanguageContext();
@@ -59,7 +60,7 @@ const RegisterPage = () => {
       swalAlert(message, { icon: "warning" });
     }
   };
-  
+
   return (
     <section className="note-page login-page">
       <h2 className="note-page__heading">{lang.registerPage.sectionHeading}</h2>
@@ -103,7 +104,7 @@ const RegisterPage = () => {
         />
         <p className="user-form__text">
           {lang.registerPage.infoHintLabel}{" "}
-          <Link to="/login">{lang.registerPage.infoHintLinkLabel}</Link>
+          <Link to={pathData.LOGIN}>{lang.registerPage.infoHintLinkLabel}</Link>
         </p>
         <button type="submit" className="user-form__submit">
           {lang.registerPage.submitButtonLabel}

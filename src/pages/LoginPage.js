@@ -5,6 +5,7 @@ import useInput from "../hooks/useInput";
 import InputField from "../components/UserForms/InputField";
 import useUserContext from "../hooks/useUserContext";
 import useLanguageContext from "../hooks/useLanguageContext";
+import pathData from "../utils/path-data";
 
 const LoginPage = () => {
   const { lang } = useLanguageContext();
@@ -70,7 +71,7 @@ const LoginPage = () => {
         />
         <p className="user-form__text">
           {lang.loginPage.infoHintLabel}{" "}
-          <Link to="/daftar">{lang.loginPage.infoHintLinkLabel}</Link>
+          <Link to={pathData.REGISTER}>{lang.loginPage.infoHintLinkLabel}</Link>
         </p>
         <button type="submit" className="user-form__submit">
           {lang.loginPage.submitButtonLabel}

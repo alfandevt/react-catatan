@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getNote } from "../utils/network-data";
+import pathData from "../utils/path-data";
 import { swalAlert } from "../utils/sweetAlert";
 import useLanguageContext from "./useLanguageContext";
 import useUserContext from "./useUserContext";
@@ -20,7 +21,7 @@ const useFetchNoteById = () => {
       setNote(data);
     } else if (error && code === 403) {
       swalAlert(alerts.authAction.forbiddenNote, { icon: "error" });
-      navigate("/");
+      navigate(pathData.BASE);
     } else if (error && code === 401) {
       swalAlert(alerts.authAction.userSession, { icon: "info" });
       logoutHandler();

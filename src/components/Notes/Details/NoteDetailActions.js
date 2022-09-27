@@ -8,6 +8,7 @@ import {
   BiTrash,
   BiArrowBack,
 } from "react-icons/bi";
+import pathData from "../../../utils/path-data";
 
 const NoteDetailActions = ({
   id,
@@ -20,9 +21,9 @@ const NoteDetailActions = ({
 
   const onGoBackHandler = () => {
     if (archived) {
-      navigate("/catatan-arsip", { replace: true });
+      navigate(pathData.ARCHIVES, { replace: true });
     } else {
-      navigate("/catatan-aktif", { replace: true });
+      navigate(pathData.NOTES, { replace: true });
     }
   };
 

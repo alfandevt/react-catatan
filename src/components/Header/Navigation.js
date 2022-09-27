@@ -2,6 +2,7 @@ import "../../styles/Header/Navigation.css";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
+import pathData from "../../utils/path-data";
 
 const Navigation = ({ lang }) => {
   const navLinkClass = "nav-link";
@@ -12,7 +13,7 @@ const Navigation = ({ lang }) => {
       <ul className="nav-links">
         <li>
           <NavLink
-            to="catatan-aktif"
+            to={pathData.NOTES}
             className={({ isActive }) => {
               return isActive ? navLinkActiveClass : navLinkClass;
             }}
@@ -22,7 +23,7 @@ const Navigation = ({ lang }) => {
         </li>
         <li>
           <NavLink
-            to="catatan-arsip"
+            to={pathData.ARCHIVES}
             className={({ isActive }) => {
               return isActive ? navLinkActiveClass : navLinkClass;
             }}

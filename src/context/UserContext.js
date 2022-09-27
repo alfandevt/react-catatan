@@ -8,6 +8,7 @@ import {
   putAccessToken,
   register,
 } from "../utils/network-data";
+import pathData from "../utils/path-data";
 import { swalAlert } from "../utils/sweetAlert";
 import { getUserData, putUserData, removeUserData } from "../utils/user-data";
 
@@ -36,7 +37,7 @@ export const UserContextProvider = ({ children }) => {
   const registerHandler = async (name, email, password) => {
     const { error } = await register(name, email, password);
     if (!error) {
-      navigate("/login", { replace: true });
+      navigate(pathData.LOGIN, { replace: true });
       swalAlert(alerts.authAction.createAccountSuccess, { icon: "success" });
     } else {
       swalAlert(alerts.authAction.createAccountFail, { icon: "error" });
@@ -48,7 +49,7 @@ export const UserContextProvider = ({ children }) => {
     if (!error) {
       putAccessToken(data.accessToken);
       getMe();
-      navigate("/catatan-aktif");
+      navigate(pathData.NOTES);
       swalAlert(alerts.authAction.loginSuccess, { icon: "success" });
     } else {
       swalAlert(alerts.authAction.loginFail, { icon: "error" });
@@ -59,7 +60,7 @@ export const UserContextProvider = ({ children }) => {
     setUser(null);
     removeAccessToken();
     removeUserData();
-    navigate("/login");
+    navigate(pathData.LOGIN);
   };
 
   const context = {
