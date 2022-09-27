@@ -5,10 +5,23 @@ const mySwal = withReactContent(Swal);
 
 export const swalAlert = (message, options = {}) => {
   mySwal.fire({
-    ...options,
-    titleText: message,
     timer: 2000,
+    titleText: message,
     confirmButtonColor: "#0f79d5",
+    ...options,
+  });
+};
+
+export const swalConfirm = (cb, options = {}) => {
+  Swal.fire({
+    showCancelButton: true,
+    confirmButtonColor: "#0f79d5",
+    cancelButtonColor: "#ea4a4a",
+    ...options,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      cb();
+    }
   });
 };
 

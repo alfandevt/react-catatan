@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { archiveNote, unarchiveNote, deleteNote } from "../utils/network-data";
 import pathData from "../utils/path-data";
-import { swalAlert } from "../utils/sweetAlert";
+import { swalAlert, swalConfirm } from "../utils/sweetAlert";
 import useLanguageContext from "./useLanguageContext";
 import useUserContext from "./useUserContext";
 
 const useNoteActions = () => {
   const navigate = useNavigate();
   const {
-    lang: { alerts },
+    lang: { alerts, confirms },
   } = useLanguageContext();
   const { logoutHandler } = useUserContext();
 
@@ -40,18 +40,22 @@ const useNoteActions = () => {
     }
   };
 
-  const deleteNoteHandler = async (noteId) => {
-    const { error, code } = await deleteNote(noteId);
-    if (!error) {
-      swalAlert(alerts.noteAction.deleteNoteSuccess, { icon: "success" });
-      navigate(pathData.BASE, { replace: true });
-    } else if (error && code === 403) {
-      swalAlert(alerts.noteAction.deleteNoteFail, { icon: "error" });
-      navigate(pathData.BASE);
-    } else if (error && code === 401) {
-      swalAlert(alerts.authAction.userSession, { icon: "info" });
-      logoutHandler();
-    }
+  const deleteNoteHandler = (noteId) => {
+    const onDelete = async () => {
+      const { error, code } = await deleteNote(noteId);
+      if (!error) {
+        swalAlert(alerts.noteAction.deleteNoteSuccess, { icon: "success" });
+        navigate(pathData.BASE, { replace: true });
+      } else if (error && code === 403) {
+        swalAlert(alerts.noteAction.deleteNoteFail, { icon: "error" });
+        navigate(pathData.BASE);
+      } else if (error && code === 401) {
+        swalAlert(alerts.authAction.userSession, { icon: "info" });
+        logoutHandler();
+      }
+    };
+
+    swalConfirm(onDelete, { ...confirms.noteDelete, icon: "question" });
   };
 
   return {

@@ -86,6 +86,14 @@ const LANGUAGES = [
         formValid: "Form valid",
       },
     },
+    confirms: {
+      noteDelete: {
+        title: "Apakah anda yakin?",
+        text: "Anda tidak akan dapat mengembalikan ini!",
+        confirmButtonText: "Ya, hapus!",
+        cancelButtonText: "Batal",
+      },
+    },
   },
   {
     id: "en-EN",
@@ -172,6 +180,14 @@ const LANGUAGES = [
         passwordLength: "Six character is minimum for password",
         passwordMismatch: "Password isn't match",
         formValid: "Form is valid",
+      },
+    },
+    confirms: {
+      noteDelete: {
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "Cancel",
       },
     },
   },
